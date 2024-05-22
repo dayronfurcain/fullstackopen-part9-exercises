@@ -3,7 +3,7 @@ interface MultiplyValues {
   value2: number
 }
 
-const parseArguments = (args: string[]): MultiplyValues => {
+export const parseArguments = (args: string[]): MultiplyValues => {
   if (args.length < 4) throw new Error('Not enough arguments')
   if (args.length > 4) throw new Error('Too many arguments')
 
@@ -17,9 +17,9 @@ const parseArguments = (args: string[]): MultiplyValues => {
   }
 }
 
-const bmiCalculator = (height: number, mass: number) => {
+export const bmiCalculator = (height: number, weight: number) => {
   const height_m = height / 100
-  const bmi = mass / height_m ** 2
+  const bmi = weight / height_m ** 2
 
   if (bmi < 18.5) {
     return 'Low weight'
